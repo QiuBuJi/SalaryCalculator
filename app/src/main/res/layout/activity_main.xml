@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/main_tvTitleRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="工资：1700元"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/main_tvTitleLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="工资：1700元"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/main_tvTitleRight"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_tvTitleRight" />
+
+        <Spinner
+            android:id="@+id/main_spMaxDay"
+            style="@style/DropDownStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:dropDownWidth="match_parent"
+            android:entries="@array/str_max_day"
+            android:foreground="@drawable/bg_ripple"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/main_etBasicSalary"
+            app:layout_constraintEnd_toStartOf="@+id/main_sw"
+            app:layout_constraintTop_toTopOf="@+id/main_etBasicSalary" />
+
+        <Switch
+            android:id="@+id/main_sw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="夜班"
+            app:layout_constraintBottom_toBottomOf="@+id/main_spMaxDay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_spMaxDay"
+            tools:checked="false" />
+
+        <EditText
+            android:id="@+id/main_etBasicSalary"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="基本工资"
+            android:inputType="number|datetime"
+            android:text="1700"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/main_etCutpayment"
+            app:layout_constraintEnd_toStartOf="@+id/main_spMaxDay"
+            app:layout_constraintTop_toTopOf="@+id/main_etCutpayment" />
+
+        <EditText
+            android:id="@+id/main_etCutpayment"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="扣款"
+            android:inputType="number|datetime"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/main_etBasicSalary"
+            app:layout_constraintTop_toBottomOf="@+id/main_tvTitleLeft" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/main_tvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_round"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:foreground="@drawable/bg_ripple"
+            android:padding="4dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_rvList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:fadeScrollbars="true"
+        android:isScrollContainer="false"
+        android:overScrollMode="always"
+        android:padding="2px"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/head" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="3dp"
+        android:translationZ="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/main_btSubmit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="提交"
+            app:layout_constraintBottom_toBottomOf="@+id/main_spTimes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/main_spTimes"
+            app:layout_constraintTop_toTopOf="@+id/main_spTimes" />
+
+        <EditText
+            android:id="@+id/main_etHour"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rectangle"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number|datetime"
+            android:text="8"
+            app:layout_constraintBottom_toBottomOf="@+id/main_tvDate"
+            app:layout_constraintStart_toEndOf="@+id/main_tvDate"
+            app:layout_constraintTop_toTopOf="@+id/main_tvDate" />
+
+        <TextView
+            android:id="@+id/main_tvDate"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_rectangle"
+            android:backgroundTint="#D3D3D3"
+            android:foreground="@drawable/bg_ripple"
+            android:gravity="center"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="2020.5.12"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:gravity="center" />
+
+        <EditText
+            android:id="@+id/main_etNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="备注..."
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/main_tvDate"
+            app:layout_constraintEnd_toStartOf="@+id/main_btSubmit"
+            app:layout_constraintStart_toStartOf="@+id/main_tvDate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/main_etHourExtra"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rectangle"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="2.5"
+            app:layout_constraintBottom_toBottomOf="@+id/main_tvDate"
+            app:layout_constraintStart_toEndOf="@+id/main_etHour"
+            app:layout_constraintTop_toTopOf="@+id/main_tvDate" />
+
+        <TextView
+            android:id="@+id/main_tvCurrDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/main_etNote"
+            app:layout_constraintEnd_toEndOf="@+id/main_btSubmit"
+            app:layout_constraintStart_toEndOf="@+id/main_etNote"
+            app:layout_constraintTop_toTopOf="@+id/main_etNote" />
+
+        <Spinner
+            android:id="@+id/main_spTimes"
+            style="@style/DropDownStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/str_times"
+            android:foreground="@drawable/bg_ripple"
+            app:layout_constraintBottom_toBottomOf="@+id/main_etHourExtra"
+            app:layout_constraintStart_toEndOf="@+id/main_etHourExtra"
+            app:layout_constraintTop_toTopOf="@+id/main_etHourExtra" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

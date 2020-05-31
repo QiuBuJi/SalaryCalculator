@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">工资计算器</string>
+
+    <string-array name="str_times">
+        <item>1倍</item>
+        <item>2倍</item>
+        <item>3倍</item>
+    </string-array>
+
+    <string-array name="str_max_day">
+        <item>22</item>
+        <item>23</item>
+    </string-array>
+
+    <string name="about">\t\t\t本软件由：吴攀先生开发\n\t\t\t版权所有：归作者所有！\n\t\t\t开发时间：2020年5月16日\n\t\t\t祝愿各位：工作愉快，心想事成！\n\n\t\t\t工资组成：基本工资 + 全勤奖（100） + 绩效奖（600/22） + 夜班补贴（20/天） + 餐补（180/22） + 加班（平时1.5倍、周末2倍、法定假日3倍）</string>
+</resources>
